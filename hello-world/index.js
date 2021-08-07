@@ -20,7 +20,7 @@ exports.handler = (event, context, callback) => {
         "body": JSON.stringify('Welcome ' + body.key3 + ' ' + body.key4
                  + '! Your age: ' + body.key1
                  + ' Your Fav number:' + body.key2
-                 + ' End of message'),
+                 + ' Practica cerouno ultimo'),
         "isBase64Encoded": false
     };
 
