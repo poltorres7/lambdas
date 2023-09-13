@@ -26,6 +26,7 @@ phases:
       - echo Entered the build phase...
       - echo Build started on `date`
       - echo mvn install
+      - echo hola Armando
     finally:
       - echo This always runs even if the install command fails
   post_build:
