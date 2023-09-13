@@ -34,7 +34,7 @@ phases:
       - echo Build completed on `date`
 
 reports:
-  arn:aws:codebuild:your-region:your-aws-account-id:report-group/report-group-name-1:
+  arn:aws:codebuild:${AWS_REGION}:${CODEBUILD_WEBHOOK_ACTOR_ACCOUNT_ID}:report-group/report-group-name-1:
     files:
       - "**/*"
     base-directory: 'target/tests/reports'
