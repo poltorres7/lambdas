@@ -27,7 +27,7 @@ phases:
       - echo Build started on `date`
       - echo mvn install
       - echo hola Armando
-      - aws cloudformation package --template-file hello-world/template.yml --s3-bucket aero-bucket-us-east-1 --output-template post-saml.yaml
+      - aws cloudformation package --template-file hello-java/java-template.yml --s3-bucket aero-bucket-us-east-1 --output-template post-saml.yaml
     finally:
       - echo This always runs even if the install command fails
   post_build:

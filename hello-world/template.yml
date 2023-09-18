@@ -4,6 +4,7 @@ Description: Lambda hola mundo.
 Parameters:
   Env:
     Type: String
+    Default: dev
 
 Resources:
   helloworld:

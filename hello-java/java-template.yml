@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: Lambda hola mundo Java.
+Parameters:
+  Env:
+    Type: String
+    Default: dev
+  AppName:
+    Type: String
+    Default: Aero
+
+
+Resources:
+  JavaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: example.HandlerIntegerJava17
+      Runtime: java17
+      Description: !Sub "${Env} Java function"
+      MemorySize: 128
+      Timeout: 30
+      # Function's execution role
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AWSLambda_ReadOnlyAccess
+        - AWSXrayWriteOnlyAccess
+        - AWSLambdaVPCAccessExecutionRole
+      Tracing: Active
