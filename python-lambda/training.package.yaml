@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'py-lambda training
+
+  '
+Resources:
+  TrainingLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://cf-templates-7gncegjfetlg-us-west-2/training/b635f28b995fb1892fe0c928fef5fefb
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+      - x86_64
+    Metadata:
+      SamResourceId: TrainingLambda

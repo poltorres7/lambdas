@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  py-lambda training
+
+
+Resources:
+
+  TrainingLambda: ### LogicalID
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/dba-pgtail-dev"
+      Architectures:
+      - x86_64
