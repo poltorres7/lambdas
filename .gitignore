@@ -2,3 +2,5 @@
 *.zip
 *.pp
 *.te
+*.package.yaml
+*.package.yml

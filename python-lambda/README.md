@@ -1,8 +1,4 @@
 
-
-
-
-
 ### Deploy the stack
 
 

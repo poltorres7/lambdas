@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  py-lambda training
+  python-lambda training
 
 
 Resources:
@@ -9,9 +9,14 @@ Resources:
   TrainingLambda: ### LogicalID
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: .
+      CodeUri: ./trainingcode
+      PackageType: Zip
       Handler: app.lambda_handler
       Runtime: python3.13
       Role: !Sub "arn:aws:iam::${AWS::AccountId}:role/dba-pgtail-dev"
       Architectures:
       - x86_64
+      Environment:
+        Variables:
+          databaseName: momo
+          databaseUser: admin
